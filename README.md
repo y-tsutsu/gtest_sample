@@ -28,11 +28,11 @@ gtest_sample/
 > mkdir build
 > cd build
 > cmake -G "MinGW Makefiles" ..
-> mingw32-make.exe
+> mingw32-make.exe CXX_FLAGS="-DGTEST_HAS_PTHREAD=0"
 > cd ..\..\..\
 ```
 
-※Winowsでビルドするにはgtest-port.hに`#define GTEST_HAS_PTHREAD 0`を追記する必要があります．
+※pthread関連でコンパイルエラーとなったので無効化しています．
 
 # サンプルテストの実行
 
