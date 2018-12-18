@@ -1,6 +1,6 @@
 # 環境
 
-* MinGWがインストール済み
+* MSYSがインストール済み
 * gitがインストール済み
 * cmakeがインストール済み
 
@@ -14,25 +14,23 @@
 ## 階層
 
 gtest_sample/  
-├ googletest/　gtest（別途Git Clone & Build）  
-├ target/　　　テストターゲット  
-├ test/　　　　テストコードサンプル  
+├─googletest　gtest（別途Git Clone & Build）  
+├─target　　　テストターゲット  
+└─test　　　　テストコードサンプル  
 
 # gtestのGit Clone & Build
 
 ```
 > git clone https://github.com/google/googletest.git
 > cd googletest
-> git checkout release-1.8.0
+> git checkout release-1.8.1
 > cd googletest
 > mkdir build
 > cd build
-> cmake -G "MinGW Makefiles" ..
-> mingw32-make.exe CXX_FLAGS="-DGTEST_HAS_PTHREAD=0"
+> cmake -G "MSYS Makefiles" ..
+> make
 > cd ..\..\..\
 ```
-
-※pthread関連でコンパイルエラーとなったので無効化しています．
 
 # サンプルテストの実行
 
